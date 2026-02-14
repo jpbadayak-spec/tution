@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tuition Management System</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #2c3e50; color: white; padding: 15px; text-align: center; }
+    nav { background: #34495e; padding: 10px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    section { padding: 20px; }
+    .dashboard { display: none; }
+    .active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tuition Management System</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showDashboard('student')">Student</a>
+    <a href="#" onclick="showDashboard('tutor')">Tutor</a>
+    <a href="#" onclick="showDashboard('admin')">Admin</a>
+  </nav>
+
+  <section id="student" class="dashboard active">
+    <h2>Student Dashboard</h2>
+    <ul>
+      <li>View Schedule</li>
+      <li>Pay Fees</li>
+      <li>Track Progress</li>
+    </ul>
+  </section>
+
+  <section id="tutor" class="dashboard">
+    <h2>Tutor Dashboard</h2>
+    <ul>
+      <li>Manage Classes</li>
+      <li>Upload Materials</li>
+      <li>Communicate with Students</li>
+    </ul>
+  </section>
+
+  <section id="admin" class="dashboard">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li>Oversee Payments</li>
+      <li>Assign Tutors</li>
+      <li>Monitor Analytics</li>
+    </ul>
+  </section>
+
+  <script>
+    function showDashboard(role) {
+      document.querySelectorAll('.dashboard').forEach(d => d.classList.remove('active'));
+      document.getElementById(role).classList.add('active');
+    }
+  </script>
+</body>
+</html>
